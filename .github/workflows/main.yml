@@ -11,6 +11,6 @@ jobs:
        - name: checkout
          uses: actions/checkout@v3
        - name: docker build
-         uses: docker/setup-buildx-version@v2
+         uses: docker/setup-buildx-action@v2
        - name: docker build
-         run: docker built -t echostoday:latest .
+         run: docker build -t echostoday:latest .
