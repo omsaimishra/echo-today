@@ -1,0 +1,11 @@
+name: cicd ec2 echo
+  on:
+    push:
+    branches:
+       -main
+
+jobs:
+  echos-today:
+  steps:
+   -name: checkout
+    uses: action/checkout@v3
