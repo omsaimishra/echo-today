@@ -10,3 +10,7 @@ jobs:
     steps:
        - name: checkout
          uses: actions/checkout@v3
+       - name: docker build
+         uses: docker/setup-buildx-version@v2
+       - name: docker build
+         run: docker built -t echostoday:latest .
