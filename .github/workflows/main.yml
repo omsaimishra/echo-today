@@ -15,7 +15,7 @@ jobs:
        - name: docker build
          run: docker build -t echostoday:latest .
        - name: connect to ec2
-         uses: apleboy/ssh-action@0.1.7
+         uses: appleboy/ssh-action@v0.1.7
          with:
            host: ${{secrets.HOST_KEY}}
            username: ubuntu
