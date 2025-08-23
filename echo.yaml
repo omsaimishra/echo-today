@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  echoes:
+    build:
+      context: .   
+      dockerfile: Dockerfile    
+    container_name: echoes-yesterday
+    ports:
+      - "7001:80"                  
+    restart: always

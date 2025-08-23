@@ -1,0 +1,31 @@
+#nav{
+height: 50px;
+}
+#logo{
+    height: 60px;
+}
+
+#input-1{
+  
+    border: none;
+    color: #000;
+}
+.active-link{
+    text-decoration: underline !important;
+    font-weight: 500;
+      transition: width 0.3s ease-in-out;
+}
+#btn-nav{
+    background-color: #C49F2F;
+    border-radius: 6px;
+    font-weight: 500;
+}
+#btn-nav:hover{
+    background-color: #a98323;
+}
+ @media ( max-width:576px) {
+    .nav{
+        display: flex;
+    }
+    
+ }
