@@ -21,7 +21,7 @@ jobs:
            username: ubuntu
            key: ${{secrets.PRIVATE_KEY}}
            scripts: |
-                 C:\Users\91784\OneDrive\Desktop\Echoes Today\Echoes-Today
+                 cd /home/ubuntu/echo-today
                  git pull origin main
                  docker compose -f echo.yaml up -d
          
