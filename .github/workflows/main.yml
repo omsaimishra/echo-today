@@ -1,11 +1,28 @@
 name: cicd ec2 echo
-  on:
-    push:
+on:
+ push:
     branches:
-       -main
+       - main
 
 jobs:
   echos-today:
-  steps:
-   -name: checkout
-    uses: action/checkout@v3
+    runs-on: ubuntu-latest
+    steps:
+       - name: checkout
+         uses: actions/checkout@v3
+       - name: docker build
+         uses: docker/setup-buildx-action@v2
+       - name: docker build
+         run: docker build -t echostoday:latest .
+       - name: connect to ec2
+         uses: appleboy/ssh-action@v0.1.7
+         with:
+           host: ${{secrets.HOST_KEY}}
+           username: ubuntu
+           key: ${{secrets.PRIVATE_KEY}}
+           scripts: |
+                 C:\Users\91784\OneDrive\Desktop\Echoes Today\Echoes-Today
+                 git pull origin main
+                 docker compose -f echo.yaml up -d
+         
+    
